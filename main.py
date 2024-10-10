@@ -12,7 +12,9 @@ def printfield(field):  # игровое поле
             if n == 3: s += '3'
         print(s)
 
-
+"""
+Считаем штрафные очки игроков 
+"""
 def straf(field):
     r = [0, 0, 0]
     for igr in (1, 2, 3):
@@ -30,7 +32,9 @@ def straf(field):
         r[igr - 1] = k // 2
     return r
 
-
+"""
+Смотрим пустые клетки
+"""
 def endgame(field):
     k = 0
     for stroka in range(4):
@@ -39,7 +43,9 @@ def endgame(field):
                 k += 1
     return k == 0
 
-
+"""
+Записываем номера игроков к клетки
+"""
 field = [[0] * 5, [0] * 5, [0] * 5, [0] * 5]
 igr = 1
 while True:
